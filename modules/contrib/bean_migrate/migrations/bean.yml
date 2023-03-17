@@ -1,0 +1,119 @@
+id: bean
+label: Bean
+audit: true
+migration_tags:
+  - Drupal 7
+  - Content
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanDeriver
+source:
+  plugin: bean
+process:
+  # The custom block migration in Drupal core (see "d7_custom_block") migrates
+  # also block IDs. Since Bean Migrate also wants to migrate Drupal 7 Bean
+  # entities to Drupal 9 block_content entities, and at the same time it is an
+  # implicit requirement to keep these migrations compatible with the migrations
+  # in Drupal core, this means that Bean Migrate cannot migrate Bean IDs to
+  # block IDs.
+  id:
+    -
+      plugin: migration_lookup
+      migration: bean
+      no_stub: true
+      source: bid
+    -
+      plugin: default_value
+      default_value:
+       - null # This is the block content ID.
+       - null # This would be the revision ID.
+       - null # This would be the language code.
+    -
+      plugin: extract
+      index:
+        - 0
+  # For translated (translaions of bean revisions), we should try to find the
+  # matching revision ID as well.
+  revision_id:
+    -
+      plugin: migration_lookup
+      migration: bean
+      no_stub: true
+      source:
+        - bid
+        - vid
+    -
+      plugin: default_value
+      default_value:
+        - null # This is the block content ID.
+        - null # This would be the revision ID.
+        - null # This would be the language code.
+    -
+      plugin: extract
+      index:
+        - 1
+  uuid:
+    plugin: skip_on_empty
+    method: process
+    source: uuid
+  info: label
+  type:
+    -
+      plugin: migration_lookup
+      migration: bean_type
+      no_stub: true
+      source: type
+    -
+      plugin: skip_on_empty
+      method: row
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  uid: uid
+  status: status
+  # created: created
+  changed: changed
+  revision_user: revision_uid
+  revision_log: log
+  revision_created: created
+  # revision_changed: changed
+  revision_default: revision_default
+  content_translation_outdated:
+    plugin: default_value
+    source: translate
+    default_value: 0
+  # In Drupal 9, when an entity translation is the default translation, then
+  # "content_translation_source" is "und". This is a bit different than Drupal 7
+  # Entity Translation, where default_translations are represented with "source"
+  # (current alias: "source_language") set to an empty string ''.
+  content_translation_source:
+    plugin: default_value
+    source: source_language
+    default_value: und
+  content_translation_created: etr_created
+  # content_translation_created: created
+  content_translation_uid: etr_uid
+  # Fields.
+  title:
+    plugin: null_coalesce
+    source:
+      - title_field
+      - title
+destination:
+  plugin: entity_complete:block_content
+  translations: true
+migration_dependencies:
+  required:
+    - bean_type
+    - bean_title_field_instance
+  optional:
+    - bean_translation_settings
+    - bean_langcode_field_widget
+    - bean_title_field_formatter
+    - bean_title_field_widget
+    - d7_field_instance_label_description_translation
+    - d7_field_option_translation
+    - d7_field_instance_widget_settings
+    - d7_field_formatter_settings
+    - d7_field_instance
+    - default_language
+    - d7_user

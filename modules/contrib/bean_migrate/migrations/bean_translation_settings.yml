@@ -1,0 +1,45 @@
+id: bean_translation_settings
+label: Bean translation settings
+migration_tags:
+  - Drupal 7
+  - Configuration
+  - Multilingual
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanDeriver
+source:
+  plugin: bean_translation_settings
+  entity_type: bean
+  constants:
+    target_entity_type_id: block_content
+process:
+  target_entity_type_id: 'constants/target_entity_type_id'
+  target_bundle:
+    -
+      plugin: migration_lookup
+      migration: bean_type
+      no_stub: true
+      source: type
+    -
+      plugin: skip_on_empty
+      method: row
+  id:
+    plugin: concat
+    source:
+      - target_entity_type_id
+      - '@target_bundle'
+    delimiter: '.'
+  default_langcode:
+    plugin: static_map
+    source: default_langcode
+    bypass: true
+    map:
+      xx-et-default: site_default
+      xx-et-current: current_interface
+      xx-et-author: authors_default
+  language_alterable: language_alterable
+  'third_party_settings/content_translation/enabled': content_translation_enabled
+  'third_party_settings/content_translation/bundle_settings/untranslatable_fields_hide': untranslatable_fields_hide
+destination:
+  plugin: entity:language_content_settings
+migration_dependencies:
+  required:
+    - bean_type

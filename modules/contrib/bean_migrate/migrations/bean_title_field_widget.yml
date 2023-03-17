@@ -1,0 +1,40 @@
+id: bean_title_field_widget
+label: Bean title field widget configuration
+migration_tags:
+  - Drupal 7
+  - Configuration
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanDeriver
+source:
+  plugin: bean_title_field_widget
+  entity_type: bean
+  constants:
+    form_mode: default
+    field_name: title
+    entity_type: block_content
+    widget_type: string_textfield
+    widget_settings:
+      size: 60,
+      placeholder: ''
+    third_party_settings: { }
+process:
+  bundle:
+    -
+      plugin: migration_lookup
+      migration: bean_type
+      no_stub: true
+      source: type
+    -
+      plugin: skip_on_empty
+      method: row
+  form_mode: 'constants/form_mode'
+  field_name: 'constants/field_name'
+  entity_type: 'constants/entity_type'
+  'options/weight': widget_weight
+  'options/type': 'constants/widget_type'
+  'options/settings': 'constants/widget_settings'
+  'options/third_party_settings': 'constants/third_party_settings'
+destination:
+  plugin: component_entity_form_display
+migration_dependencies:
+  required:
+    - bean_title_field_instance

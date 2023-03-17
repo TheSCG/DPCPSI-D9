@@ -1,0 +1,41 @@
+id: bean_title_field_instance
+label: Bean title field instance
+migration_tags:
+  - Drupal 7
+  - Configuration
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanDeriver
+source:
+  plugin: bean_title_field_instance
+  entity_type: bean
+  constants:
+    status: true
+    field_type: string
+    entity_type: block_content
+    field_name: title
+    label: Title
+    description: 'The Title of the block.'
+    required: 0
+process:
+  status: 'constants/status'
+  type: 'constants/field_type'
+  entity_type: 'constants/entity_type'
+  field_name: 'constants/field_name'
+  bundle:
+    -
+      plugin: migration_lookup
+      migration: bean_type
+      no_stub: true
+      source: type
+    -
+      plugin: skip_on_empty
+      method: row
+  label: 'constants/label'
+  description: 'constants/description'
+  required: 'constants/required'
+  translatable: title_field_exists
+destination:
+  plugin: entity:field_config
+migration_dependencies:
+  required:
+    - bean_title_field
+    - bean_type

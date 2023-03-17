@@ -1,0 +1,58 @@
+api: 2
+core: 7.x
+
+projects:
+  # Drupal 7 core, including patches
+  drupal:
+    type: core
+    version: "7.77"
+
+  # Bean
+  bean:
+    version: "1.11"
+    type: module
+
+  # Block reference
+  blockreference:
+    version: "2.7"
+    type: module
+
+  # CTools
+  ctools:
+    version: "1.17"
+    type: module
+
+  # Entity
+  entity:
+    version: "1.9"
+    type: module
+
+  # Entity Translation
+  entity_translation:
+    version: "1.1"
+    type: module
+
+  # Entity view modes
+  entity_view_mode:
+    version: "1.0-rc1"
+    type: module
+
+  # Internationalization
+  i18n:
+    version: "1.27"
+    type: module
+
+  # Title
+  title:
+    version: "1.0-beta3"
+    type: module
+
+  # Universally Unique IDentifier
+  uuid:
+    version: "1.3"
+    type: module
+
+  # Variable
+  variable:
+    version: "2.5"
+    type: module

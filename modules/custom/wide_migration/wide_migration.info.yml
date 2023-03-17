@@ -1,0 +1,7 @@
+name: Wide migration
+description: 'Drupal 7 Site to Drupal 9 Migration'
+package: Understand Drupal
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - drupal:migrate

@@ -1,0 +1,26 @@
+id: bean_type
+label: Bean type
+migration_tags:
+  - Drupal 7
+  - Configuration
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanDeriver
+source:
+  plugin: bean_type
+  entity_type: bean
+  constants:
+    revision: 1
+process:
+  # Trying to avoid that the potentially preexisting block type from the
+  # Standard install profile gets overridden.
+  id:
+    plugin: bean_unique_type
+    source: type
+  label:
+    plugin: null_coalesce
+    source:
+      - label
+      - type
+  description: description
+  revision: constants/revision
+destination:
+  plugin: entity:block_content_type

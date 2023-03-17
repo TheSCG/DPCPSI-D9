@@ -1,0 +1,43 @@
+id: bean_title_field_formatter
+label: Bean title field formatter configuration
+migration_tags:
+  - Drupal 7
+  - Configuration
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanDeriver
+source:
+  plugin: bean_title_field_formatter
+  entity_type: bean
+  constants:
+    field_name: title
+    entity_type: block_content
+    formatter_type: string
+    label_display: hidden
+    formatter_settings:
+      link_to_entity: false
+    third_party_settings: { }
+process:
+  bundle:
+    -
+      plugin: migration_lookup
+      migration: bean_type
+      no_stub: true
+      source: type
+    -
+      plugin: skip_on_empty
+      method: row
+  view_mode: view_mode
+  field_name: 'constants/field_name'
+  entity_type: 'constants/entity_type'
+  'options/type': 'constants/formatter_type'
+  'options/weight': field_display_weight
+  'options/label': 'constants/label_display'
+  'options/settings': 'constants/formatter_settings'
+  'options/third_party_settings': 'constants/third_party_settings'
+  hidden: field_display_is_hidden
+destination:
+  plugin: component_entity_display
+migration_dependencies:
+  required:
+    - bean_title_field_instance
+  optional:
+    - d7_view_modes

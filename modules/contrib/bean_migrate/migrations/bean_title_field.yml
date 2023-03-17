@@ -1,0 +1,36 @@
+id: bean_title_field
+label: Bean title field storage
+migration_tags:
+  - Drupal 7
+  - Configuration
+source:
+  plugin: embedded_data
+  entity_type: bean
+  data_rows:
+    -
+      entity_type: block_content
+      field_name: title
+      type: string
+      cardinality: 1
+  ids:
+    entity_type:
+      type: string
+    field_name:
+      type: string
+  source_module: bean
+  constants:
+    status: 1
+    langcode: 'und'
+process:
+  entity_type: entity_type
+  status: 'constants/status'
+  langcode: 'constants/langcode'
+  field_name: field_name
+  type: type
+  cardinality: cardinality
+  # Translatable is not migrated and the Drupal 8 default of true is used.
+  # If translatable is false in field storage then the field can not be
+  # set to translatable via the UI.
+  #translatable: translatable
+destination:
+  plugin: entity:field_storage_config

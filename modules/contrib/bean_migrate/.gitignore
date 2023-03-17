@@ -1,0 +1,13 @@
+# Ignore the codebase of the Drupal 7 source instance.
+tests/fixtures/bean
+
+# Keep the file system fixture clean.
+tests/fixtures/files/*
+!tests/fixtures/files/sites
+tests/fixtures/files/sites/*
+!tests/fixtures/files/sites/default
+tests/fixtures/files/sites/default/*
+!tests/fixtures/files/sites/default/files
+tests/fixtures/files/sites/default/files/.htaccess
+tests/fixtures/files/sites/default/files/js
+tests/fixtures/files/sites/default/files/styles

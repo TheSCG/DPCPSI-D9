@@ -1,0 +1,38 @@
+id: bean_langcode_field_widget
+label: Bean Language selector form widget settings
+migration_tags:
+  - Drupal 7
+  - Configuration
+  - Multilingual
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanDeriver
+source:
+  plugin: bean_translation_settings
+  entity_type: bean
+  constants:
+    form_mode: default
+    field_name: langcode
+    entity_type: block_content
+    widget_type: language_select
+    third_party_settings: { }
+process:
+  bundle:
+    -
+      plugin: migration_lookup
+      migration: bean_type
+      no_stub: true
+      source: type
+    -
+      plugin: skip_on_empty
+      method: row
+  form_mode: 'constants/form_mode'
+  field_name: 'constants/field_name'
+  entity_type: 'constants/entity_type'
+  'options/weight': langcode_weight
+  'options/type': 'constants/widget_type'
+  'options/settings/include_locked': langcode_include_locked
+  'options/third_party_settings': 'constants/third_party_settings'
+destination:
+  plugin: component_entity_form_display
+migration_dependencies:
+  required:
+    - bean_type

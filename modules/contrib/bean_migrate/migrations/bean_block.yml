@@ -1,0 +1,98 @@
+id: bean_block
+label: Bean block placement
+migration_tags:
+  - Drupal 7
+  - Configuration
+deriver: Drupal\bean_migrate\Plugin\migrate\BeanBlockDeriver
+source:
+  plugin: bean_block_placement
+  constants:
+    status: 1
+process:
+  status: 'constants/status'
+  theme:
+    -
+      plugin: block_theme
+      source:
+        - theme
+        - default_theme
+        - admin_theme
+    -
+      plugin: skip_on_empty
+      method: row
+  id:
+    -
+      plugin: concat
+      source:
+        - '@theme'
+        - module
+        - delta
+      delimiter: _
+    -
+      plugin: machine_name
+      field: id
+  plugin:
+    -
+      plugin: bean_block_plugin_id
+      source:
+        - bean_id
+        - bean_revision_id
+    -
+      plugin: skip_on_empty
+      method: row
+  region:
+    plugin: block_region
+    source:
+      - theme
+      - '@theme'
+      - region
+    map:
+      bartik:
+        bartik:
+          # Bartik 7.x --> Bartik 8.x
+          featured: featured_top
+          triptych_first: featured_bottom_first
+          triptych_middle: featured_bottom_second
+          triptych_last: featured_bottom_third
+          footer_firstcolumn: footer_first
+          footer_secondcolumn: footer_second
+          footer_thirdcolumn: footer_third
+          footer_fourthcolumn: footer_fourth
+          footer: footer_fifth
+    # If mapping fails, put the block in the content region.
+    default_value: content
+  weight: weight
+  title_or_null:
+    plugin: default_value
+    source: title
+    default_value: null
+  label:
+    plugin: null_coalesce
+    source:
+      - '@title_or_null'
+      - bean_title_default
+      - bean_title
+  settings:
+    plugin: block_settings
+    source:
+      - '@plugin'
+      - delta
+      - settings
+      - '@label'
+  visibility:
+    plugin: block_visibility
+    source:
+      - visibility
+      - pages
+      - roles
+    # If the block uses PHP visibility, don't migrate it unless the PHP module
+    # is enabled.
+    skip_php: true
+destination:
+  plugin: entity_bean_block
+migration_dependencies:
+  required:
+    - bean
+  optional:
+    - d7_user_role
+    - default_language
