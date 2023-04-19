@@ -1,0 +1,44 @@
+# Main theme library.
+global:
+  js:
+    js/dpcpsi.js: {}
+    js_old/jquery.cycle.js: {}
+    js_old/modernizr.min.js: {}
+    js_old/jquery.hoverIntent.minified.js: {}
+    js_old/masonry.pkgd.min.js: {}
+    js_old/jquery.treeview.js: {}
+    js_old/jquery.a11yTree.js: {}
+    js_old/jquery.collapse.js: {}
+    js_old/jquery.collapse_storage.js: {}
+    js_old/nih.behaviors.js: {}
+    js_old/jquery.hashchange.min.js: {}
+    js_old/search-publications.js: {}
+    js_old/dynamic-breadcrumb.js: {}
+    js_old/admin-helpers.js: {}
+  css:
+    base:
+      css_old/base/elements.css: {}
+      css_old/modules/system/system.menus.theme.css: {}
+      css_old/nih.normalize.css: {}
+      css_old/nih.hacks.css: {}
+      css_old/nih.styles.css: {}
+      css_old/nih.no-query.css: {}
+      css_old/table.css: {}
+      css_old/calendar.css: {}
+    component:
+      css/components/block.css: {}
+      css/components/breadcrumb.css: {}
+      css/components/field.css: {}
+      css/components/form.css: {}
+      css/components/header.css: {}
+      css/components/menu.css: {}
+      css/components/messages.css: {}
+      css/components/node.css: {}
+      css/components/sidebar.css: {}
+      css/components/table.css: {}
+      css/components/tabs.css: {}
+      css/components/buttons.css: {}
+    layout:
+      css/layouts/layout.css: {}
+    theme:
+      css/theme/print.css: { media: print }

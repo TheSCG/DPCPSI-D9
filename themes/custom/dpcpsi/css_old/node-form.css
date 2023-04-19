@@ -1,0 +1,59 @@
+/* line 1, ../sass/node-form.scss */
+.field-widget-field-collection-modal {
+  /*
+  .field-name-field-section-title,
+  h3.sidebar-block-title,
+  .page-section-title,
+  .field-name-field-slide-title,
+  .homeslide-title	{
+  			width: 15em;
+  }*/
+  /*
+  .field-collection-item-field-slide,
+  .field-collection-item-field-sidebar-block,
+  .field-collection-item-field-page-section
+  */ }
+  /* line 2, ../sass/node-form.scss */
+  .field-widget-field-collection-modal .field-type-text-long > * {
+    overflow: auto;
+    max-height: 100px; }
+  /* line 8, ../sass/node-form.scss */
+  .field-widget-field-collection-modal .field-collection-item-field-boxes-teaser {
+    pointer-events: none; }
+    /* line 11, ../sass/node-form.scss */
+    .field-widget-field-collection-modal .field-collection-item-field-boxes-teaser .box-teaser-image img {
+      width: 150px;
+      height: auto; }
+    /* line 16, ../sass/node-form.scss */
+    .field-widget-field-collection-modal .field-collection-item-field-boxes-teaser h4.box-title {
+      font-size: small; }
+  /* line 35, ../sass/node-form.scss */
+  .field-widget-field-collection-modal .entity-field-collection-item {
+    display: table-row; }
+    /* line 37, ../sass/node-form.scss */
+    .field-widget-field-collection-modal .entity-field-collection-item > * {
+      display: table-cell;
+      padding: 1em;
+      vertical-align: middle; }
+      /* line 41, ../sass/node-form.scss */
+      .field-widget-field-collection-modal .entity-field-collection-item > *:first-child {
+        width: 15em; }
+      /* line 44, ../sass/node-form.scss */
+      .field-widget-field-collection-modal .entity-field-collection-item > *:not(:last-child) {
+        border-right: 4px solid #DDD; }
+
+/* line 51, ../sass/node-form.scss */
+.ui-front {
+  z-index: 10000; }
+
+/* line 54, ../sass/node-form.scss */
+.ui-dialog.submitting {
+  cursor: wait; }
+
+/* line 58, ../sass/node-form.scss */
+.ui-dialog.submitting * {
+  pointer-events: none; }
+
+/* line 62, ../sass/node-form.scss */
+.ui-dialog.submitting .ui-dialog-content, .ui-dialog.submitting .ui-dialog-buttonpane {
+  opacity: .5; }

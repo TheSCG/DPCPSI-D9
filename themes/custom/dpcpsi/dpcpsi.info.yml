@@ -1,0 +1,30 @@
+name: DPCPSI
+type: theme
+base theme: classy
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - dpcpsi/global
+regions:
+  ribbon: "Ribbon"
+  branding: "Branding"
+  search: "Search"
+  utilities: "Utilities"
+  navigation: "Navigation"
+  subnavigation: "Sub Navigation"
+  slideshow: "Slideshow"
+  emergency_message: "Emergency Message"
+  section_header: "Section Header"
+  help: "Help"
+  featured_content: "Featured Content"
+  above_content: "Above Content"
+  content: "Content"
+  below_content: "Below Content"
+  connect: "Connect"
+  sidebar_first: "First Sidebar"
+  sidebar_second: "Second Sidebar"
+  sidebar_third: "Third Sidebar"
+  footer: "Footer"
+  template_content: "Template Content"

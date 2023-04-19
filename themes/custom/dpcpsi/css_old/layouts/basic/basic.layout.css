@@ -1,0 +1,425 @@
+/*******************************************************************************
+ * basic.layout.scss
+ *
+ * Styling of the "basic" layout for the NIH website.
+ ******************************************************************************/
+/*%cfx {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}*/
+/*
+$small: 30em;
+$medium-small: 40em;
+$medium: 50em;
+$large: 60em;
+$large-extra: 70em;
+$max-width: 1200px;
+*/
+/*
+$sprites-clean-up: true;
+$sprites-spacing: 20px;
+@import "sprites/*.png";
+@include all-sprites-sprites;
+*/
+/*
+ * Retina Sprites for Compass
+ * by:              Gaya Kessler
+ * last update:     03/11/14
+ *
+ * Usage:
+ * 1. create two folders in your image directory (in this case 'icons' and 'icons-2x').
+ * 2. adjust the foldernames defined below if you use different names.
+ * 3. create sprite images for pixel ratio 1 screens and put them in the first folder.
+ * 4. create sprite images for pixel ratio 2 screens and put them in the second folder, use the same filenames.
+ * 5. use the sprite-image in your Sass/Scss using: '@include use-sprite(<sprite-name>)'
+ */
+/* line 9, ../../../sass/abstractions/_base.scss */
+.l-region--utilities:after,
+.l-region--search:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+@media (min-width: 800px) {
+  /* line 46, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-region--utilities,
+  .l-region--search {
+    float: right;
+    clear: right; }
+
+  /* line 51, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-region--utilities > *,
+  .l-region--search > * {
+    float: left; } }
+/* line 56, ../../../sass/layouts/basic/basic.layout.scss */
+.l-region--connect {
+  clear: both; }
+  /* line 9, ../../../sass/abstractions/_base.scss */
+  .l-region--connect:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 60, ../../../sass/layouts/basic/basic.layout.scss */
+.l-region--help {
+  margin-bottom: 3em; }
+  /* line 9, ../../../sass/abstractions/_base.scss */
+  .l-region--help:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 65, ../../../sass/layouts/basic/basic.layout.scss */
+.l-ribbon-wrapper,
+.l-banner-wrapper,
+.l-navigation-wrapper,
+.l-region--subnavigation,
+.l-main-wrapper,
+.l-connect-wrapper,
+.l-footer-wrapper {
+  width: 100%; }
+  /* line 9, ../../../sass/abstractions/_base.scss */
+  .l-ribbon-wrapper:after,
+  .l-banner-wrapper:after,
+  .l-navigation-wrapper:after,
+  .l-region--subnavigation:after,
+  .l-main-wrapper:after,
+  .l-connect-wrapper:after,
+  .l-footer-wrapper:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 77, ../../../sass/layouts/basic/basic.layout.scss */
+.l-ribbon,
+.l-banner,
+.l-menu-wrapper,
+.site-menu,
+.l-main,
+.l-connect,
+.l-footer {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  /* @include show-grid(overlay); */
+  margin: 0 auto;
+  min-height: 100%; }
+  /* line 12, C:\Ruby23\lib\ruby\gems\2.3.0\gems\susy-2.1.3\sass\susy\output\support\_clearfix.scss */
+  .l-ribbon:after,
+  .l-banner:after,
+  .l-menu-wrapper:after,
+  .site-menu:after,
+  .l-main:after,
+  .l-connect:after,
+  .l-footer:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  /* line 9, ../../../sass/abstractions/_base.scss */
+  .l-ribbon:after,
+  .l-banner:after,
+  .l-menu-wrapper:after,
+  .site-menu:after,
+  .l-main:after,
+  .l-connect:after,
+  .l-footer:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 90, ../../../sass/layouts/basic/basic.layout.scss */
+.l-banner {
+  clear: both; }
+
+/* line 96, ../../../sass/layouts/basic/basic.layout.scss */
+.l-content {
+  padding-top: 2em; }
+  /* line 98, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-content > .l-region--featured-content {
+    margin-top: -2em; }
+
+@media (min-width: 800px) {
+  /* line 105, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-region--sidebar-first,
+  .l-region--sidebar-third {
+    margin-top: 2em; }
+
+  /* line 109, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-region--sidebar-second {
+    margin-bottom: 2em; } }
+/* line 114, ../../../sass/layouts/basic/basic.layout.scss */
+.l-content,
+.l-region--sidebar-first,
+.l-region--sidebar-third {
+  padding-left: 1.5em;
+  padding-right: 1.5em; }
+  /* line 120, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-content > .l-region--featured-content,
+  .l-region--sidebar-first > .l-region--featured-content,
+  .l-region--sidebar-third > .l-region--featured-content {
+    margin-left: -1.5em;
+    margin-right: -1.5em; }
+
+/* line 127, ../../../sass/layouts/basic/basic.layout.scss */
+.l-region--sidebar-second {
+  margin-left: 1.5em;
+  margin-right: 1.5em; }
+
+/* line 136, ../../../sass/layouts/basic/basic.layout.scss */
+.responsive-state {
+  display: none;
+  width: 480px; }
+
+@media (min-width: 600px) {
+  /* line 9, ../../../sass/abstractions/_base.scss */
+  .l-region--sidebar-second:after {
+    content: "";
+    display: table;
+    clear: both; } }
+@media (min-width: 800px) {
+  /* line 156, ../../../sass/layouts/basic/basic.layout.scss */
+  .responsive-state {
+    width: 800px; }
+
+  /* line 160, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-ribbon,
+  .l-banner,
+  .l-menu-wrapper,
+  .site-menu,
+  .l-main,
+  .l-connect,
+  .l-footer {
+    /* @include show-grid(overlay); */ }
+
+  /* line 170, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-ribbon,
+  .l-banner,
+  .l-menu-wrapper,
+  .site-menu {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 12, C:\Ruby23\lib\ruby\gems\2.3.0\gems\susy-2.1.3\sass\susy\output\support\_clearfix.scss */
+    .l-ribbon:after,
+    .l-banner:after,
+    .l-menu-wrapper:after,
+    .site-menu:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  /* line 177, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-region--sidebar-first {
+    margin-top: 2em; }
+
+  /* line 181, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-region--sidebar-first,
+  .l-region--sidebar-third {
+    width: 25%;
+    float: left;
+    padding-left: 2.25em;
+    padding-right: 1.5em; }
+
+  /* line 188, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-region--sidebar-second {
+    margin-left: 0;
+    margin-right: 2.25em; }
+
+  /* line 193, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-content {
+    min-height: 20em;
+    padding-left: 2.25em;
+    padding-right: 2.25em; }
+    /* line 197, ../../../sass/layouts/basic/basic.layout.scss */
+    .l-content > .l-region--featured-content {
+      margin-left: -2.25em;
+      margin-right: -2.25em; }
+
+  /* line 204, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-sidebar-third .l-content-wrapper {
+    width: 75%;
+    float: right;
+    margin-right: 0; }
+  /* line 207, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-sidebar-third .l-content {
+    padding-left: 0; }
+    /* line 209, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-sidebar-third .l-content > .l-region--featured-content {
+      margin-left: 0; }
+
+  /* line 216, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-sidebar-first .l-content-wrapper {
+    width: 75%;
+    float: right;
+    margin-right: 0; }
+  /* line 219, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-sidebar-first .l-content {
+    padding-left: 1rem; }
+    /* line 221, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-sidebar-first .l-content > .l-region--featured-content {
+      margin-left: -1rem; }
+
+  /* line 229, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-one-sidebar.has-sidebar-second .l-content-wrapper {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+    /* line 231, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-one-sidebar.has-sidebar-second .l-content-wrapper .l-content {
+      width: 66.66667%;
+      float: left;
+      padding-right: 1.5em; }
+      /* line 234, ../../../sass/layouts/basic/basic.layout.scss */
+      .has-one-sidebar.has-sidebar-second .l-content-wrapper .l-content > .l-region--featured-content {
+        margin-right: -1.5em; }
+    /* line 238, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-one-sidebar.has-sidebar-second .l-content-wrapper .l-region--sidebar-second {
+      width: 33.33333%;
+      float: right;
+      margin-right: 0;
+      padding-right: 0;
+      background-color: #f2f2ed; }
+
+  /* line 248, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-two-sidebars.has-sidebar-second .l-content-wrapper,
+  .has-three-sidebars .l-content-wrapper {
+    width: 75%;
+    float: right;
+    margin-right: 0;
+    padding-right: 2.25em; }
+    /* line 251, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-two-sidebars.has-sidebar-second .l-content-wrapper .l-content,
+    .has-three-sidebars .l-content-wrapper .l-content {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0;
+      padding-right: 0; }
+      /* line 254, ../../../sass/layouts/basic/basic.layout.scss */
+      .has-two-sidebars.has-sidebar-second .l-content-wrapper .l-content > .l-region--featured-content,
+      .has-three-sidebars .l-content-wrapper .l-content > .l-region--featured-content {
+        margin-right: -2.25em; }
+    /* line 259, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-two-sidebars.has-sidebar-second .l-content-wrapper .l-region--sidebar-second,
+    .has-three-sidebars .l-content-wrapper .l-region--sidebar-second {
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+      margin-right: 0; } }
+@media (min-width: 960px) {
+  /* line 273, ../../../sass/layouts/basic/basic.layout.scss */
+  .l-ribbon,
+  .l-banner,
+  .l-menu,
+  .l-main,
+  .l-connect,
+  .l-footer {
+    /* @include show-grid(overlay); */ }
+
+  /* line 284, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-two-sidebars.has-sidebar-second .l-content-wrapper,
+  .has-three-sidebars .l-content-wrapper {
+    width: 75%;
+    float: right;
+    margin-right: 0;
+    padding-right: 0; }
+    /* line 287, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-two-sidebars.has-sidebar-second .l-content-wrapper .l-content,
+    .has-three-sidebars .l-content-wrapper .l-content {
+      width: 66.66667%;
+      float: left;
+      padding-left: 1rem;
+      padding-right: 1rem; }
+      /* line 291, ../../../sass/layouts/basic/basic.layout.scss */
+      .has-two-sidebars.has-sidebar-second .l-content-wrapper .l-content > .l-region--featured-content,
+      .has-three-sidebars .l-content-wrapper .l-content > .l-region--featured-content {
+        margin-left: -1rem;
+        margin-right: -1rem; }
+    /* line 296, ../../../sass/layouts/basic/basic.layout.scss */
+    .has-two-sidebars.has-sidebar-second .l-content-wrapper .l-region--sidebar-second,
+    .has-three-sidebars .l-content-wrapper .l-region--sidebar-second {
+      width: 33.33333%;
+      float: right;
+      margin-right: 0;
+      background-color: #f2f2ed; } }
+@media (min-width: 1100px) {
+  /* line 311, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-one-sidebar.has-sidebar-second .l-content-wrapper .l-content {
+    width: 75%;
+    float: left; }
+  /* line 314, ../../../sass/layouts/basic/basic.layout.scss */
+  .has-one-sidebar.has-sidebar-second .l-content-wrapper .l-region--sidebar-second {
+    width: 25%;
+    float: right;
+    margin-right: 0;
+    background-color: #f2f2ed; } }
+@media all and (max-width: 479px) {
+  /* line 326, ../../../sass/layouts/basic/basic.layout.scss */
+  .node--full .field--name-field-image img {
+    float: right;
+    max-width: 40%;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    margin-top: 5px; } }
+@media (min-width: 480px) {
+  /* line 324, ../../../sass/layouts/basic/basic.layout.scss */
+  .node--full .field--name-field-image {
+    float: right;
+    max-width: 50%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 5px; } }
+
+/* line 343, ../../../sass/layouts/basic/basic.layout.scss */
+.nodesinblock .lastupdated {
+  display: none; }
+
+/* line 348, ../../../sass/layouts/basic/basic.layout.scss */
+.page-section {
+  margin-bottom: 0.8rem; }
+  /* line 9, ../../../sass/abstractions/_base.scss */
+  .page-section:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media (min-width: 800px) {
+    /* line 354, ../../../sass/layouts/basic/basic.layout.scss */
+    .page-section.has-group-right .group-header,
+    .page-section.has-group-right .group-footer {
+      width: 100%;
+      float: left;
+      clear: both; }
+    /* line 360, ../../../sass/layouts/basic/basic.layout.scss */
+    .page-section.has-group-right .group-left {
+      clear: both;
+      float: left;
+      width: 60%;
+      padding-right: 2em; }
+    /* line 366, ../../../sass/layouts/basic/basic.layout.scss */
+    .page-section.has-group-right .group-right {
+      float: left;
+      width: 40%; } }
+  /* line 373, ../../../sass/layouts/basic/basic.layout.scss */
+  .page-section.hide-title .page-section-title {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px); }
+  /* line 378, ../../../sass/layouts/basic/basic.layout.scss */
+  .page-section.no-title .page-section-title {
+    display: none; }
+
+@media (min-width: 800px) {
+  /* line 387, ../../../sass/layouts/basic/basic.layout.scss */
+  .section-ncf .has-sidebar-first .l-main {
+    background: #f2f9ff; }
+    /* line 390, ../../../sass/layouts/basic/basic.layout.scss */
+    .section-ncf .has-sidebar-first .l-main .l-content-wrapper {
+      background: #fff; } }

@@ -1,0 +1,232 @@
+/*@import url("style.css");*/
+/* line 2, ../sass/ckeditor.scss */
+body {
+  margin: 2em;
+  background-image: none !important;
+  background-color: #fff;
+  font-family: Arial, sans-serif; }
+
+/* line 8, ../sass/ckeditor.scss */
+.cke_source {
+  white-space: pre-wrap !important; }
+
+/* line 13, ../sass/ckeditor.scss */
+.cke_editable img.float-left {
+  float: left;
+  margin-top: 5px;
+  margin-right: 1rem;
+  margin-bottom: 1rem; }
+/* line 19, ../sass/ckeditor.scss */
+.cke_editable img.float-right {
+  float: right;
+  margin-top: 5px;
+  margin-left: 1rem;
+  margin-bottom: 1rem; }
+/* line 26, ../sass/ckeditor.scss */
+.cke_editable .slideshow-placeholder {
+  text-align: center;
+  border: 2px dashed #CCC;
+  margin: 0 auto;
+  height: 160px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+  font-variant: small-caps;
+  font-size: larger; }
+  /* line 41, ../sass/ckeditor.scss */
+  .cke_editable .slideshow-placeholder:hover {
+    background: #CCC; }
+  /* line 44, ../sass/ckeditor.scss */
+  .cke_editable .slideshow-placeholder::after {
+    content: "[slideshow]";
+    display: block;
+    font-variant: small-caps;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #555;
+    color: #fff;
+    padding: .5em; }
+  /* line 55, ../sass/ckeditor.scss */
+  .cke_editable .slideshow-placeholder.force-optionset-program::after {
+    content: "[slideshow: program]"; }
+  /* line 58, ../sass/ckeditor.scss */
+  .cke_editable .slideshow-placeholder.force-optionset-home-page::after {
+    content: "[slideshow: home page]"; }
+  /* line 61, ../sass/ckeditor.scss */
+  .cke_editable .slideshow-placeholder * {
+    display: none; }
+/* line 65, ../sass/ckeditor.scss */
+.cke_editable .image-placeholder {
+  display: inline-block;
+  text-align: center;
+  border: 2px dashed #CCC;
+  margin: 0 auto;
+  width: 150px;
+  height: 100px;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer; }
+  /* line 78, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder:hover {
+    background: #CCC; }
+  /* line 81, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder::before {
+    content: "";
+    margin: 1em;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    color: #000;
+    font-size: 9px; }
+  /* line 91, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder :empty::before {
+    content: "[IMAGE PLACEHOLDER]"; }
+  /* line 94, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder * {
+    display: none; }
+  /* line 97, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder.image-placeholder-left {
+    float: left;
+    margin-right: 1em;
+    margin-top: 5px;
+    margin-bottom: 1em; }
+  /* line 103, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder.image-placeholder-right {
+    float: right;
+    margin-left: 1em;
+    margin-top: 5px;
+    margin-bottom: 1em; }
+  /* line 109, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder.image-placeholder-auto {
+    display: inline-block;
+    width: 20%; }
+  /* line 113, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder.image-placeholder-centered-big {
+    display: block;
+    width: 80%;
+    margin-left: 10%; }
+  /* line 118, ../sass/ckeditor.scss */
+  .cke_editable .image-placeholder.image-placeholder-centered-small {
+    display: block;
+    width: 40%;
+    margin-left: 30%; }
+/* line 124, ../sass/ckeditor.scss */
+.cke_editable .content-collapsible, .cke_editable .inline-read-more {
+  border-top: 2px solid #CCC;
+  border-bottom: 2px solid #CCC;
+  padding-left: 1em;
+  padding-right: 1em;
+  position: relative; }
+  /* line 127, ../sass/ckeditor.scss */
+  .cke_editable .content-collapsible.collapsed, .cke_editable .inline-read-more.collapsed {
+    border-top-style: dashed;
+    border-bottom-style: dashed; }
+  /* line 134, ../sass/ckeditor.scss */
+  .cke_editable .content-collapsible:hover, .cke_editable .inline-read-more:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: #333; }
+    /* line 137, ../sass/ckeditor.scss */
+    .cke_editable .content-collapsible:hover::before, .cke_editable .inline-read-more:hover::before {
+      content: "collapsible: start";
+      position: absolute;
+      top: -1.5em;
+      left: 0;
+      height: 1.5em;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 4px;
+      box-sizing: border-box; }
+    /* line 148, ../sass/ckeditor.scss */
+    .cke_editable .content-collapsible:hover.collapsed::before, .cke_editable .inline-read-more:hover.collapsed::before {
+      content: "collapsed: start"; }
+    /* line 151, ../sass/ckeditor.scss */
+    .cke_editable .content-collapsible:hover::after, .cke_editable .inline-read-more:hover::after {
+      content: "collapsible: end";
+      position: absolute;
+      bottom: -1.5em;
+      right: 0;
+      height: 1.5em;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 4px;
+      box-sizing: border-box; }
+    /* line 162, ../sass/ckeditor.scss */
+    .cke_editable .content-collapsible:hover.collapsed::after, .cke_editable .inline-read-more:hover.collapsed::after {
+      content: "collapsed: end"; }
+/* line 168, ../sass/ckeditor.scss */
+.cke_editable .content-collapsible .read-more-label,
+.cke_editable .content-collapsible .read-less-label {
+  clear: both;
+  width: auto;
+  min-width: 7em;
+  position: relative;
+  margin-top: 6px;
+  top: 2px;
+  text-align: left;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+  height: 33px;
+  line-height: 1.7em;
+  margin-bottom: 0.4em;
+  padding-left: 1.5em;
+  padding-right: 2.5em;
+  padding-top: 0.15em;
+  text-decoration: none;
+  border: 2px solid #20558a;
+  background-color: #20558a;
+  color: #fff; }
+  /* line 190, ../sass/ckeditor.scss */
+  .cke_editable .content-collapsible .read-more-label::after,
+  .cke_editable .content-collapsible .read-less-label::after {
+    content: ">";
+    font-weight: bold;
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 100%;
+    line-height: 2em;
+    transform: rotate(90deg);
+    transform-origin: center center;
+    right: .5em;
+    top: 0;
+    position: absolute; }
+/* line 207, ../sass/ckeditor.scss */
+.cke_editable .content-collapsible .read-less-label {
+  background-color: white;
+  color: #333333;
+  border: 2px solid #777777;
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important; }
+  /* line 215, ../sass/ckeditor.scss */
+  .cke_editable .content-collapsible .read-less-label::after {
+    transform: rotate(-90deg); }
+/* line 222, ../sass/ckeditor.scss */
+.cke_editable .inline-read-more:hover::before {
+  content: "inline read more: start"; }
+/* line 225, ../sass/ckeditor.scss */
+.cke_editable .inline-read-more:hover.collapsed::before {
+  content: "inline read more: start"; }
+/* line 228, ../sass/ckeditor.scss */
+.cke_editable .inline-read-more:hover::after {
+  content: "inline read more: end"; }
+/* line 231, ../sass/ckeditor.scss */
+.cke_editable .inline-read-more:hover.collapsed::after {
+  content: "inline read more: end"; }
+/* line 235, ../sass/ckeditor.scss */
+.cke_editable .inline-read-more .read-more-label {
+  cursor: pointer;
+  margin-top: 0.5em;
+  color: #004fba;
+  background: white;
+  padding: 0;
+  display: inline-block;
+  border: none; }

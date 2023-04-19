@@ -1,0 +1,15 @@
+/* line 2, ../sass/context.iframe.scss */
+.context-iframe #admin-menu,
+.context-iframe #branding {
+  display: none !important; }
+/* line 6, ../sass/context.iframe.scss */
+.context-iframe #page {
+  padding: 0 !important;
+  margin: 0 !important; }
+/* line 11, ../sass/context.iframe.scss */
+.context-iframe .file-image-form .form-actions {
+  display: none; }
+
+/* line 17, ../sass/context.iframe.scss */
+html body.admin-menu.context-iframe {
+  margin-top: 0 !important; }
